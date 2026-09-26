@@ -5,7 +5,7 @@ const navItems = [
   { label: "Contacto", href: "/contacto" },
 ];
 
-export const Navbar = () => {
+export default function Navbar () {
   return (
     <header className="sticky top-0 z-50 border-b border-cyan-900/5 bg-white/95 backdrop-blur">
       <div className="container-anvida flex h-14 items-center justify-between gap-4">

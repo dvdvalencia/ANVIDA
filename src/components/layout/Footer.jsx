@@ -9,7 +9,7 @@ const columns = [
   },
 ];
 
-export const Footer = () => {
+export default function Footer () {
   return (
 <footer className="bg-[#fff7ed]">
       <div className="container-anvida grid gap-10 border-t border-slate-900/5 py-12 md:grid-cols-4">

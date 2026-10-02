@@ -34,7 +34,7 @@ export default function HeroSection() {
 
         <div className="mx-auto mt-8 max-w-5xl rounded-2xl bg-white p-2 shadow-2xl">
           <div className="mb-2 flex gap-2 overflow-x-auto px-2 pt-1">
-            {["Vuelos + Hotel", "Paquetes Todo Incluido", "Tour y Aventura", "Cruceros"].map(
+            {["Paquetes Todo Incluido", "Hospedaje", "Tour y Aventura", "Trasporte"].map(
               (item, index) => (
                 <button
                   key={item}

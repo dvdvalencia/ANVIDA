@@ -10,21 +10,21 @@ export default function Navbar () {
     <header className="sticky top-0 z-50 border-b border-cyan-900/5 bg-white/95 backdrop-blur">
       <div className="container-anvida flex h-14 items-center justify-between gap-4">
         <a href="/" className="flex items-center gap-2">
-        <img src="/logo.png" alt="ANVIDA Logo" />
-          {/* <div className="grid size-8 place-items-center rounded-lg bg-cyan-600 text-xs font-extrabold text-white">
-            A
-          </div> */}
-          <span className="font-display text-sm font-extrabold tracking-tight text-slate-800">
+        <img src="/logo.png" alt="ANVIDA Logo" className="h-12 w-auto md:h-14" />
+          {/* <div className="grid size-8 place-items-center rounded-2xl bg-cyan-600 text-xs font-extrabold text-white">
             ANVIDA
-          </span>
+          </div> */}
+          {/* <span className="font-display text-sm font-extrabold tracking-tight text-slate-800">
+            ANVIDA
+          </span> */}
         </a>
 
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center gap-6 md:flex ">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-xs font-semibold text-slate-600 transition hover:text-cyan-700"
+              className="rounded-full px-3 py-2 text-xs font-semibold text-slate-600 transition hover:bg-cyan-700 hover:text-white"
             >
               {item.label}
             </a>

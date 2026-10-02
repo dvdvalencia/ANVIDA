@@ -4,18 +4,19 @@ import ContactCTA from "@/components/home/ContactCTA/ContactCTA";
 import OfficeSection from "@/components/home/OfficeSection/OfficeSection";
 import Testimonials from "@/components/home/Testimonials/Testimonials";
 import WhyAnvida from "@/components/home/WhyAnvida/WhyAnvida";
+import SeasonalOffers from "@/components/home/SeasonalOffers/SeasonalOffers";
 
 
 export default function Home() {
   return (
     <>
-      <ContactCTA />
       <HeroSection />
-      <OfficeSection />
       <PopularDestinations />
       <SeasonalOffers />
-      <Testimonials />
       <WhyAnvida />
+      <Testimonials />
+      <ContactCTA />
+      <OfficeSection />
     </>
   );
 }

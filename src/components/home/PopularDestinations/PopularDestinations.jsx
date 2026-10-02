@@ -48,7 +48,7 @@ export default function PopularDestinations () {
               (filter, index) => (
                 <button
                   key={filter}
-                  className={`shrink-0 rounded-full px-3 py-2 text-[10px] font-semibold ${
+                  className={`shrink-0 rounded-full px-3 py-2 text-[10px] font-semibold transition-colors hover:bg-cyan-700 hover:text-white ${
                     index === 0
                       ? "bg-cyan-700 text-white"
                       : "bg-white text-slate-600 ring-1 ring-slate-200"

@@ -1,8 +1,8 @@
 const benefits = [
   ["Personalización Total", "Diseñamos cada itinerario adaptado exactamente a tus gustos."],
-  ["Mejor Precio Garantizado", "Acuerdos directos con cadenas hoteleras y aerolíneas."],
-  ["Soporte 24/7 en Destino", "Un concierge dedicado disponible para ayudarte."],
-  ["Viajes Seguros & Protegidos", "Pólizas de cobertura en asistencia médica."],
+  ["Mejor Precio Garantizado", "Acuerdos directos con cadenas de transporte y hoteleras."],
+  ["Soporte 24/7 en Destino", "Durante tu viaje estamos atentos y disponibles para ayudarte."],
+  ["Viajes Seguros & Protegidos", "Pólizas de cobertura en asistencia médica y seguros de viaje."],
 ];
 
 export default function WhyAnvida() {

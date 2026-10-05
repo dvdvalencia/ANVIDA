@@ -155,7 +155,7 @@ export default function DestinationQuote({ data }) {
         <div>
           <div className="mb-6">
             <span className="text-xs font-bold uppercase tracking-[0.18em] text-cyan-700">
-              Cotizador de viajes
+              Cotiza tu viaje
             </span>
             <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
               ¿Cuándo quieres viajar?

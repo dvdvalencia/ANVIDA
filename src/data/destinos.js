@@ -4,7 +4,7 @@ const destinosData = {
       ciudad: "Coveñas",
       hoteles: [
         {
-          nombre: "Costa de Marfil",
+          nombre: "COSTA DE MARFIL",
           tarifas: [
             { periodo: "lunes a jueves", precio: 429000 },
             { periodo: "viernes a lunes", precio: 459000 },
@@ -14,7 +14,7 @@ const destinosData = {
           incluye: "Alojamiento y desayuno. Consulta con un asesor los detalles del plan.",
         },
         {
-          nombre: "Acapulco",
+          nombre: "ACAPULCO",
           tarifas: [
             { periodo: "lunes a jueves", precio: 499000 },
             { periodo: "viernes a lunes", precio: 649000 },
@@ -28,14 +28,34 @@ const destinosData = {
       ciudad: "Cartagena",
       hoteles: [
         {
-          nombre: "Ejemplo Hotel Cartagena",
+          nombre: "TORRES DEL LAGO",
           tarifas: [
-            { periodo: "lunes a jueves", precio: 550000 },
-            { periodo: "viernes a lunes", precio: 700000 },
-            { periodo: "festivos", precio: 900000 },
+            { periodo: "lunes a jueves", precio: 659000 },
+            { periodo: "viernes a lunes", precio: 599000 },
+            { periodo: "festivos", precio: 579000 },
           ],
           incluye: "Alojamiento. Consulta con un asesor los detalles del plan.",
         },
+                {
+          nombre: "APARTAMENTOS CON AIRE Y PISCINA",
+          tarifas: [
+            { periodo: "lunes a jueves", precio: 659000 },
+            { periodo: "viernes a lunes", precio: 775000 },
+            { periodo: "festivos", precio: 579000 },
+          ],
+          incluye: "Alojamiento. Consulta con un asesor los detalles del plan.",
+        },
+        {
+          nombre: "HOTEL TOLEDO ",
+          tarifas: [
+            { periodo: "lunes a jueves", precio: 659000 },
+            { periodo: "viernes a lunes", precio: 599000 },
+            { periodo: "festivos", precio: 779000 },
+          ],
+          incluye: "Alojamiento. Consulta con un asesor los detalles del plan.",
+        },
+
+
       ],
     },
   ],

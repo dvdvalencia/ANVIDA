@@ -22,9 +22,10 @@ export default function HeroSection() {
             Agencia Oficial de Experiencias Extraordinarias
           </span>
 
-          <h1 className="mt-4 font-display text-4xl font-extrabold tracking-tight md:text-5xl lg:text-[56px] lg:leading-[1.1]">
-            Agencia de viajes en Bello, Antioquia
+          <h1 className="mt-4 font-display text-4xl font-extrabold tracking-tight uppercase md:text-5xl lg:text-[56px] lg:leading-[1.1]">
+            Agencia de viajes y Turismo
           </h1>
+          <span>Bello, Antioquia</span>
 
           <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-white/90 md:text-base">
             Descubre planes turísticos y experiencias de viaje nacionales e

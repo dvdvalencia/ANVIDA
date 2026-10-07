@@ -39,7 +39,7 @@ export default function Navbar () {
             302 620 93 87 - 314 614 51 06
           </a>
           <a
-            href="/contacto"
+            href="/destinos"
             className="rounded-full bg-orange-500 px-4 py-2 text-[11px] font-bold text-white shadow-sm transition hover:bg-orange-600"
           >
             Cotiza tu viaje

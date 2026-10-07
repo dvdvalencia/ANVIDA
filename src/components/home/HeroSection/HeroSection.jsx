@@ -23,31 +23,35 @@ export default function HeroSection() {
           </span>
 
           <h1 className="mt-4 font-display text-4xl font-extrabold tracking-tight md:text-5xl lg:text-[56px] lg:leading-[1.1]">
-            ¡Viaja, Vive, Descubre!
+            Agencia de viajes en Bello, Antioquia
           </h1>
 
           <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-white/90 md:text-base">
-            Experiencias diseñadas a tu medida en los rincones más fascinantes
-            del planeta con curaduría experta y seguridad absoluta.
+            Descubre planes turísticos y experiencias de viaje nacionales e
+            internacionales con ANVIDA, tu agencia de viajes en Bello,
+            Antioquia.
           </p>
         </div>
 
         <div className="mx-auto mt-8 max-w-5xl rounded-2xl bg-white p-2 shadow-2xl">
           <div className="mb-2 flex gap-2 overflow-x-auto px-2 pt-1">
-            {["Paquetes Todo Incluido", "Hospedaje", "Tour y Aventura", "Trasporte"].map(
-              (item, index) => (
-                <button
-                  key={item}
-                  className={`shrink-0 rounded-full px-3 py-2 text-[10px] font-bold transition-colors hover:bg-cyan-700 hover:text-white ${
-                    index === 0
-                      ? "bg-cyan-700 text-white"
-                      : "bg-slate-100 text-slate-600"
-                  }`}
-                >
-                  {item}
-                </button>
-              )
-            )}
+            {[
+              "Paquetes Todo Incluido",
+              "Hospedaje",
+              "Tour y Aventura",
+              "Trasporte",
+            ].map((item, index) => (
+              <button
+                key={item}
+                className={`shrink-0 rounded-full px-3 py-2 text-[10px] font-bold transition-colors hover:bg-cyan-700 hover:text-white ${
+                  index === 0
+                    ? "bg-cyan-700 text-white"
+                    : "bg-slate-100 text-slate-600"
+                }`}
+              >
+                {item}
+              </button>
+            ))}
           </div>
 
           <div className="grid gap-2 md:grid-cols-[1.4fr_1fr_.8fr_.9fr_auto]">
@@ -71,10 +75,18 @@ export default function HeroSection() {
         </div>
 
         <div className="mx-auto mt-5 flex max-w-3xl flex-wrap justify-center gap-2 text-[10px] font-semibold text-white/90">
-          <span className="rounded-full bg-white/10 px-3 py-2">Cientos de viajeros felices</span>
-          <span className="rounded-full bg-white/10 px-3 py-2">Asesoría personalizada</span>
-          <span className="rounded-full bg-white/10 px-3 py-2">Pagos flexibles</span>
-          <span className="rounded-full bg-white/10 px-3 py-2">Seguridad absoluta</span>
+          <span className="rounded-full bg-white/10 px-3 py-2">
+            Cientos de viajeros felices
+          </span>
+          <span className="rounded-full bg-white/10 px-3 py-2">
+            Asesoría personalizada
+          </span>
+          <span className="rounded-full bg-white/10 px-3 py-2">
+            Pagos flexibles
+          </span>
+          <span className="rounded-full bg-white/10 px-3 py-2">
+            Seguridad absoluta
+          </span>
         </div>
       </div>
     </section>

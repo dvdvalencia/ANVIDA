@@ -1,11 +1,47 @@
-const searchFields = [
-  ["DESTINO", "Tolu y Coveñas"],
-  ["FECHA DE SALIDA", "15/06/2027"],
-  ["DURACIÓN", "7 Días"],
-  ["PASAJEROS", "2 Adultos"],
-];
+"use client";
+import React, { useState } from "react";
+import destinosData from "./../../../data/destinos";
 
 export default function HeroSection() {
+  // Estados para manejar los filtros de la barra de búsqueda
+  const [selectedCiudad, setSelectedCiudad] = useState(
+    destinosData.destinos[0].ciudad,
+  );
+
+  // Buscar los hoteles disponibles para la ciudad seleccionada
+  const currentDestinoObj =
+    destinosData.destinos.find((d) => d.ciudad === selectedCiudad) ||
+    destinosData.destinos[0];
+  const [selectedHotel, setSelectedHotel] = useState(
+    currentDestinoObj.hoteles[0].nombre,
+  );
+  // Manejar cambio de ciudad (reinicia el hotel al primer disponible de esa ciudad)
+  const handleCiudadChange = (e) => {
+    const nuevaCiudad = e.target.value;
+    setSelectedCiudad(nuevaCiudad);
+    const nuevoDestinoObj = destinosData.destinos.find(
+      (d) => d.ciudad === nuevaCiudad,
+    );
+    if (nuevoDestinoObj && nuevoDestinoObj.hoteles.length > 0) {
+      setSelectedHotel(nuevoDestinoObj.hoteles[0].nombre);
+    }
+  };
+  // Obtener el hotel actual seleccionado para extraer un precio de referencia o periodo
+  const currentHotelObj =
+    currentDestinoObj.hoteles.find((h) => h.nombre === selectedHotel) ||
+    currentDestinoObj.hoteles[0];
+  const precioReferencia = currentHotelObj.tarifas[0]?.precio
+    ? new Intl.NumberFormat("es-CO", {
+        style: "currency",
+        currency: "COP",
+        maximumFractionDigits: 0,
+      }).format(currentHotelObj.tarifas[0].precio)
+    : "Consultar";
+  const handleSearch = () => {
+    alert(
+      `Buscando viaje a: ${selectedCiudad} - Hotel: ${selectedHotel}. Precio desde: ${precioReferencia}`,
+    );
+  };
   return (
     <section className="relative overflow-hidden bg-cyan-800">
       <div
@@ -34,13 +70,15 @@ export default function HeroSection() {
           </p>
         </div>
 
+        {/* Barra de Búsqueda Interactiva */}
+
         <div className="mx-auto mt-8 max-w-5xl rounded-2xl bg-white p-2 shadow-2xl">
           <div className="mb-2 flex gap-2 overflow-x-auto px-2 pt-1">
             {[
               "Paquetes Todo Incluido",
               "Hospedaje",
               "Tour y Aventura",
-              "Trasporte",
+              "Transporte",
             ].map((item, index) => (
               <button
                 key={item}
@@ -55,21 +93,75 @@ export default function HeroSection() {
             ))}
           </div>
 
-          <div className="grid gap-2 md:grid-cols-[1.4fr_1fr_.8fr_.9fr_auto]">
-            {searchFields.map(([label, value]) => (
-              <div
-                key={label}
-                className="rounded-lg border border-slate-100 bg-[#fffaf5] px-3 py-2"
+          <div className="grid gap-2 md:grid-cols-[1.4fr_1fr_.8fr_.9fr_auto] items-center">
+            {/* 1. Selector de Destino (Ciudad) */}
+            <div className="rounded-lg border border-slate-100 bg-[#fffaf5] px-3 py-2">
+              <label
+                htmlFor="destino-select"
+                className="block text-[8px] font-bold tracking-wider text-cyan-700 cursor-pointer"
               >
-                <span className="block text-[8px] font-bold tracking-wider text-cyan-700">
-                  {label}
-                </span>
-                <span className="mt-1 block truncate text-xs font-semibold text-slate-800">
-                  {value}
-                </span>
-              </div>
-            ))}
-            <button className="rounded-full bg-orange-500 px-6 py-3 text-xs font-bold text-white hover:bg-orange-600">
+                DESTINO
+              </label>
+              <select
+                id="destino-select"
+                value={selectedCiudad}
+                onChange={handleCiudadChange}
+                className="w-full mt-1 bg-transparent text-xs font-semibold text-slate-800 focus:outline-none cursor-pointer"
+              >
+                {destinosData.destinos.map((dest) => (
+                  <option key={dest.ciudad} value={dest.ciudad}>
+                    {dest.ciudad}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* 2. Selector de Hotel / Plan */}
+            <div className="rounded-lg border border-slate-100 bg-[#fffaf5] px-3 py-2">
+              <label
+                htmlFor="hotel-select"
+                className="block text-[8px] font-bold tracking-wider text-cyan-700 cursor-pointer"
+              >
+                HOTEL / PLAN
+              </label>
+              <select
+                id="hotel-select"
+                value={selectedHotel}
+                onChange={(e) => setSelectedHotel(e.target.value)}
+                className="w-full mt-1 bg-transparent text-xs font-semibold text-slate-800 focus:outline-none cursor-pointer truncate"
+              >
+                {currentDestinoObj.hoteles.map((hotel) => (
+                  <option key={hotel.nombre} value={hotel.nombre}>
+                    {hotel.nombre}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* 3. Fecha de Salida (Simulada/Informativa basada en datos) */}
+            <div className="rounded-lg border border-slate-100 bg-[#fffaf5] px-3 py-2">
+              <span className="block text-[8px] font-bold tracking-wider text-cyan-700">
+                TARIFA DESDE
+              </span>
+              <span className="mt-1 block truncate text-xs font-semibold text-orange-600">
+                {precioReferencia}
+              </span>
+            </div>
+            {/* 4. Jornada / Periodo */}
+            <div className="rounded-lg border border-slate-100 bg-[#fffaf5] px-3 py-2">
+              <span className="block text-[8px] font-bold tracking-wider text-cyan-700">
+                MODALIDAD
+              </span>
+              <span className="mt-1 block truncate text-xs font-semibold text-slate-800 capitalize">
+                {currentHotelObj.tarifas[0]?.periodo || "General"}
+              </span>
+            </div>
+
+            {/* Botón de Acción */}
+            <button
+              onClick={handleSearch}
+              className="rounded-full bg-orange-500 px-6 py-3 text-xs font-bold text-white hover:bg-orange-600 transition-colors cursor-pointer h-full flex items-center justify-center"
+            >
               Buscar
             </button>
           </div>

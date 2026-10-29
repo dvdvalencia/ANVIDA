@@ -1,4 +1,4 @@
-import DestinationQuote from "@/components/destinations/DestinationQuote";
+import DestinationQuote from "@/components/destinations/DestinationQuote/DestinationQuote";
 import destinosData from "@/data/destinos";
 
 export const metadata = {
